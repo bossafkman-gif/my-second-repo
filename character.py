@@ -1,3 +1,5 @@
+import random
+
 class Character:
     def __init__(self, name, hp, attack_power):
         self.name = name
@@ -13,3 +15,8 @@ class Character:
 
     def __str__(self):
         return f"{self.name}: {self.hp} HP"
+
+    def attack(self, enemy):
+        damage = random.uniform(0.3, 0.9) * self.attack_power
+        enemy.hp -= damage
+        return damage
